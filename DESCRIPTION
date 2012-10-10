@@ -1,0 +1,16 @@
+Package: KEGGREST
+Version: 0.99.0
+Title: Client-side REST access KEGG
+Author: Kozo Nishida
+Depends: methods, BiocGenerics
+Imports: RCurl 
+Suggests: RUnit
+LazyLoad: yes
+Maintainer: Kozo Nishida
+        <knishida@riken.jp>
+Description: A package that provides a client interface to the KEGG
+        REST server
+biocViews: Annotation, Pathways, ConnectTools
+License: BSD
+Packaged: 2012-10-02 02:55:03 UTC; biocbuild
+InstallableEverywhere: yes
