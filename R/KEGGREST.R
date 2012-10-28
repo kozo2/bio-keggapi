@@ -1,10 +1,9 @@
 library("RCurl")
 
-extractFromDefinitions <- function(def){
-  res <- unlist(strsplit(def, "\n"))
-}
-
 list.organisms <- function(){
-  orgs <- getURL("http://rest.kegg.jp/list/organism")
-  extractFromDefinitions(orgs)
+  response <- getURL("http://rest.kegg.jp/list/organism")
+  rows <- strsplit(response, "\n")
+  rows.len <- length(rows[[1]])
+  result <- matrix(unlist(lapply(rows, strsplit, "\t")), nrow=rows.len, byrow=T)
+  result
 }
