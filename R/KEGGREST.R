@@ -7,14 +7,23 @@ convertTable <- function(res){
   result
 }
 
-list.organisms <- function(){
-  response <- getURL("http://rest.kegg.jp/list/organism")
+list.organisms <- function(){ 
+  url <- "http://rest.kegg.jp/list/organism"
+  response <- getURL(url)
   table <- convertTable(response)
   table
 }
 
 list.pathways <- function(org){
-  response <- getURL(paste("http://rest.kegg.jp/list/pathway", org, sep="/"))
+  url <- paste("http://rest.kegg.jp/list/pathway", org, sep="/")
+  response <- getURL(url)
+  table <- convertTable(response)
+  table
+}
+
+conv <- function(target.db, id.list){
+  url <- paste("http://rest.kegg.jp/conv", target.db, paste(id.list, collapse="+"), sep="/")
+  response <- getURL(url)
   table <- convertTable(response)
   table
 }
