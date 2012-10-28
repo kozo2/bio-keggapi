@@ -33,3 +33,10 @@ bget <- function(dbentries, option=""){
   response <- getURL(url)
   response
 }
+
+get.genes.by.pathway <- function(pathway.id){
+  url <- paste("http://rest.kegg.jp/link", substr(pathway.id, 6, 8), pathway.id, sep="/")
+  response <- getURL(url)
+  table <- convertTable(response)
+  table
+}
