@@ -45,3 +45,11 @@ get.genes.by.pathway <- function(pathway.id){
   table <- convertTable(response)
   table
 }
+
+get.ko.by.gene <- function(genes.id){
+  url <- paste("http://rest.kegg.jp/link/ko", paste(genes.id, collapse="+"), sep="/")
+  print(url)
+  response <- getURL(url)
+  table <- convertTable(response)
+  table
+}
