@@ -62,7 +62,7 @@ get.genes.by.ko <- function(ko.id.list, org){
   table
 }
 
-search.compounds.by.mass <- function(lower.limit, upper.limit){
+search.compounds.by.mol_weight <- function(lower.limit, upper.limit){
   url <- paste("http://rest.kegg.jp/find/compound", paste(lower.limit, upper.limit, sep="-"), "mol_weight", sep="/")
   print(url)
   response <- getURL(url)
