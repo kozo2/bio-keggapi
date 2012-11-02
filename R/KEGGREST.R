@@ -69,3 +69,11 @@ search.compounds.by.mol_weight <- function(lower.limit, upper.limit){
   table <- convertTable(response)  
   table
 }
+
+search.compounds.by.exact_mass <- function(exact.mass){
+  url <- paste("http://rest.kegg.jp/find/compound", exact.mass, "exact_mass", sep="/")
+  print(url)
+  response <- getURL(url)
+  table <- convertTable(response)
+  table
+}
