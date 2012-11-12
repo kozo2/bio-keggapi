@@ -77,3 +77,11 @@ search.compounds.by.exact_mass <- function(exact.mass){
   table <- convertTable(response)
   table
 }
+
+search.compounds.by.name <- function(name) {
+  url <- paste("http://rest.kegg.jp/find/compound", paste(strsplit(name, " ")[[1]], collapse="+"), sep="/")
+  print(url)
+  response <- getURL(url)
+  table <- convertTable(response)
+  table
+}
