@@ -85,3 +85,11 @@ search.compounds.by.name <- function(name) {
   table <- convertTable(response)
   table
 }
+
+search.glycans.by.name <- function(name) {
+  url <- paste("http://rest.kegg.jp/find/glycan", paste(strsplit(name, " ")[[1]], collapse="+"), sep="/")
+  print(url)
+  response <- getURL(url)
+  table <- convertTable(response)
+  table
+} 
