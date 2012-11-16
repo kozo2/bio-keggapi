@@ -62,6 +62,14 @@ get.genes.by.ko <- function(ko.id.list, org){
   table
 }
 
+get.pathways.by.reactions <- function(reaction.id.list) {
+  url <- paste("http://rest.kegg.jp/link/pathway", paste(reaction.id.list, collapse="+"), sep="/")
+  print(url)
+  response <- getURL(url)
+  table <- convertTable(response)
+  table 
+}
+
 search.compounds.by.mol_weight <- function(lower.limit, upper.limit){
   url <- paste("http://rest.kegg.jp/find/compound", paste(lower.limit, upper.limit, sep="-"), "mol_weight", sep="/")
   print(url)
