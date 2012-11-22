@@ -23,12 +23,12 @@ list.pathways <- function(org){
   table
 }
 
-bconv <- function(target.db, id.list){
-  url <- paste("http://rest.kegg.jp/conv", target.db, paste(id.list, collapse="+"), sep="/")
+bconv <- function(id.list){
+  url <- paste("http://rest.genome.jp/link", paste(append(id.list, "-e"), collapse="+"), sep="/")
   print(url)
   response <- getURL(url)
   table <- convertTable(response)
-  table
+  table[,c(1,2)]
 }
 
 bget <- function(dbentries, option=""){
