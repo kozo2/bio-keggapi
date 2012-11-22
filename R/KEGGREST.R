@@ -1,9 +1,14 @@
 library("RCurl")
 
 convertTable <- function(res){
-  rows <- strsplit(res, "\n")
-  rows.len <- length(rows[[1]])
-  result <- matrix(unlist(lapply(rows, strsplit, "\t")), nrow=rows.len, byrow=T)
+  if(nchar(res) == 0){
+    print("no result")
+    result <- NULL
+  } else {
+    rows <- strsplit(res, "\n")
+    rows.len <- length(rows[[1]])
+    result <- matrix(unlist(lapply(rows, strsplit, "\t")), nrow=rows.len, byrow=T)
+  }
   result
 }
 
