@@ -62,6 +62,14 @@ get.genes.by.ko <- function(ko.id.list, org){
   table
 }
 
+get.pathways.by.compounds <- function(compound.id.list){
+  url <- paste("http://rest.kegg.jp/link/pathway", paste(compound.id.list, collapse="+"), sep="/")
+  print(url)
+  response <- getURL(url)
+  table <- convertTable(response)  
+  table
+}
+
 get.pathways.by.reactions <- function(reaction.id.list) {
   url <- paste("http://rest.kegg.jp/link/pathway", paste(reaction.id.list, collapse="+"), sep="/")
   print(url)
