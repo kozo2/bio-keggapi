@@ -54,6 +54,14 @@ get.ko.by.gene <- function(genes.id){
   table
 }
 
+get.ko.by.ko.class <- function(ko.class.id){
+  url <- paste("http://rest.kegg.jp/link/ko", paste(ko.class.id, collapse="+"), sep="/")
+  print(url)
+  response <- getURL(url)
+  table <- convertTable(response)  
+  table  
+}
+
 get.genes.by.ko <- function(ko.id.list, org){
   url <- paste("http://rest.kegg.jp/link", org, paste(ko.id.list, collapse="+"), sep="/")
   print(url)
