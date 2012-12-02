@@ -1,5 +1,3 @@
-library("RCurl")
-
 convertTable <- function(res){
   if(nchar(res) == 0){
     print("no result")
