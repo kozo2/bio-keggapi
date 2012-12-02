@@ -6,8 +6,7 @@ Depends: methods, BiocGenerics
 Imports: RCurl 
 Suggests: RUnit
 LazyLoad: yes
-Maintainer: Kozo Nishida
-        <knishida@riken.jp>
+Maintainer: Kozo Nishida <knishida@riken.jp>
 Description: A package that provides a client interface to the KEGG
         REST server
 biocViews: Annotation, Pathways, ConnectTools
