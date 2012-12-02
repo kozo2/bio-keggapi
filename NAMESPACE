@@ -1,0 +1,20 @@
+import("RCurl")
+import("BiocGenerics")
+
+export(list.organisms,
+       list.pathways,
+       bconv,
+       bget,
+       get.genes.by.pathway,
+       get.ko.by.gene,
+       get.ko.by.ko.class,
+       get.genes.by.ko,
+       get.pathways.by.genes,
+       get.pathways.by.enzymes,
+       get.pathways.by.compounds,
+       get.pathways.by.reactions,
+       search.compounds.by.mol_weight,
+       search.compounds.by.exact_mass,
+       search.compounds.by.name,
+       search.glycans.by.name,
+       search.compounds.by.composition)
