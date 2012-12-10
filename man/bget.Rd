@@ -26,6 +26,6 @@ bget(bget.command)
 
 \examples{
   # retrieve two KEGG/GENES entries
-	bget(c("hsa:10458", "ece:Z5100")
+	bget(c("hsa:10458", "ece:Z5100"))
 }
 \keyword{datasets}

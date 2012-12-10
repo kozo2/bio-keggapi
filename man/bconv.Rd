@@ -37,7 +37,7 @@ bconv(id.list)
 \author{Kozo Nishida}
 
 \examples{
-        bconv(c("hsa:10458", "ece:Z5100")))
+        bconv(c("hsa:10458", "ece:Z5100"))
 }
 \keyword{ datasets }
 
